@@ -1062,6 +1062,174 @@ font-size: var(--text-lg);
 }
 
 /* ========================
+   加载状态样式
+   ======================== */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16) 0;
+}
+
+.loading-spinner p {
+    color: var(--color-gray-500);
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-gray-200);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    text-align: center;
+    padding: var(--space-16) 0;
+    color: var(--color-error);
+}
+
+/* ========================
+   学员心声 - 交错滚动效果
+   ======================== */
+.testimonials {
+    padding: var(--space-24) 0;
+    background: var(--color-gray-50);
+    overflow: hidden;
+}
+
+.testimonials .container {
+    position: relative;
+}
+
+.testimonials-row {
+    margin: var(--space-6) -100vw 0;
+    padding: 0 100vw;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.testimonials-row:last-child {
+    margin-bottom: 0;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: var(--space-6);
+    width: max-content;
+}
+
+/* 水平卡片样式 */
+.testimonial-card-horizontal {
+    flex-shrink: 0;
+    width: 380px;
+    background: var(--color-gray-100);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    position: relative;
+}
+
+.testimonial-card-horizontal:hover {
+    /* 移除悬停效果，保持滚动不受影响 */
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.card-header .author-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: var(--text-base);
+}
+
+.card-header .author-info {
+    flex: 1;
+}
+
+.card-header .author-name {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-1);
+}
+
+.card-header .author-title {
+    font-size: var(--text-xs);
+    color: var(--color-gray-500);
+    margin: 0;
+}
+
+.verified-badge {
+    width: 18px;
+    height: 18px;
+    background: var(--color-success);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.verified-badge svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--color-white);
+}
+
+.card-header .author-rating {
+    margin-top: 0;
+    margin-left: auto;
+}
+
+.card-header .author-rating span {
+    font-size: var(--text-xs);
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content .testimonial-text {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-date {
+    font-size: var(--text-xs);
+    color: var(--color-gray-400);
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+}
+
+.verified-badge {
+    display: none;
+}
+
+
+
+/* ========================
    学习流程
    ======================== */
 .process {
