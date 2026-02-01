@@ -1514,10 +1514,12 @@ font-size: var(--text-lg);
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding-top: var(--space-8);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    gap: var(--space-4);
 }
 
 .copyright {
