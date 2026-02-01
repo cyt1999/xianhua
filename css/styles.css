@@ -856,14 +856,17 @@ font-size: var(--text-lg);
 
 .courses-cta {
     text-align: center;
-    padding: var(--space-8);
-    background: var(--color-gray-50);
+    padding: var(--space-10);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #132347 100%);
     border-radius: var(--radius-xl);
+    border: 1px solid rgba(201, 162, 39, 0.2);
 }
 
 .courses-cta p {
-    margin-bottom: var(--space-4);
-    color: var(--color-gray-600);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-lg);
+    color: var(--color-white);
+    font-weight: 500;
 }
 
 /* ========================
