@@ -1,0 +1,41 @@
+# robots.txt for 显化交易学院
+# 显化 - 专业交易员孵化与交易教育培训
+
+User-agent: *
+Allow: /
+
+# Disallow private and admin directories
+Disallow: /css/
+Disallow: /js/
+Disallow: /icons/
+Disallow: /memories/
+
+# Disallow search and utility pages
+Disallow: /search
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.xianhua.com/sitemap.xml
+
+# Crawl-delay (optional, for respectful crawling)
+Crawl-delay: 10
+
+# Specific crawler instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# RSS feed access
+Allow: /feed
+Allow: /rss
+
+# Language and geographic targeting
+# Website is primarily in Chinese (zh-CN)
