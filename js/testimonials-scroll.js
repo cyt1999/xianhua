@@ -9,11 +9,21 @@
     function initTestimonialsScroll() {
         const tracks = document.querySelectorAll('.testimonials-track');
         
+        if (tracks.length === 0) {
+            console.log('未找到 testimonials-track 元素');
+            return;
+        }
+        
         tracks.forEach((track, index) => {
             const cards = track.querySelectorAll('.testimonial-card-horizontal');
             const cardWidth = 380; // 卡片宽度
-            const gap = 24; // 卡片间距
+            const gap = 24; // 卡片间距 (对应 CSS 中的 --space-6)
             const totalCards = cards.length;
+            
+            if (totalCards === 0) {
+                console.log('未找到 testimonial-card-horizontal 元素');
+                return;
+            }
             
             // 复制卡片以实现无缝滚动
             cards.forEach(card => {
@@ -51,6 +61,11 @@
         });
     }
 
-    // DOM加载完成后初始化
-    document.addEventListener('DOMContentLoaded', initTestimonialsScroll);
+    // 确保DOM加载完成后初始化
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTestimonialsScroll);
+    } else {
+        // DOM已经加载完成，直接初始化
+        initTestimonialsScroll();
+    }
 })();
