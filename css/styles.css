@@ -759,7 +759,7 @@ font-size: var(--text-lg);
 }
 
 /* ========================
-   核心优势
+   磐石计划
    ======================== */
 .features {
     padding: var(--space-24) 0;
@@ -787,58 +787,66 @@ font-size: var(--text-lg);
     color: var(--color-gray-400);
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
+.bedrock-content {
+    max-width: 1000px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
+    color: var(--color-white);
 }
 
-.feature-card {
+.bedrock-section {
+    margin-bottom: var(--space-12);
+    padding: var(--space-8);
     background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-xl);
-    padding: var(--space-8);
-    transition: all var(--transition-base);
+    line-height: 1.8;
 }
 
-.feature-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
+.bedrock-section h3 {
+    font-size: var(--text-2xl);
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-8);
+    font-family: var(--font-serif);
 }
 
-.feature-visual {
-    margin-bottom: var(--space-6);
+.bedrock-section h3:first-child {
+    margin-top: 0;
 }
 
-.visual-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba(201, 162, 39, 0.15);
-    border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.visual-icon svg {
-    width: 32px;
-    height: 32px;
-}
-
-.feature-card .feature-title {
+.bedrock-section h4 {
     font-size: var(--text-xl);
     color: var(--color-white);
     margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
 }
 
-.feature-card .feature-description {
-    font-size: var(--text-sm);
-    color: var(--color-gray-400);
-    line-height: 1.7;
-    margin: 0;
+.bedrock-section p {
+    font-size: var(--text-base);
+    color: var(--color-gray-300);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+}
+
+.bedrock-section ul {
+    margin-bottom: var(--space-6);
+    padding-left: var(--space-6);
+}
+
+.bedrock-section li {
+    font-size: var(--text-base);
+    color: var(--color-gray-300);
+    line-height: 1.8;
+    margin-bottom: var(--space-2);
+    list-style-type: disc;
+}
+
+.bedrock-section strong {
+    color: var(--color-accent);
+    font-weight: 700;
 }
 
 /* ========================
@@ -1636,8 +1644,20 @@ font-size: var(--text-lg);
         font-size: var(--text-base);
     }
     
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .bedrock-content {
+        padding: 0 var(--space-4);
+    }
+    
+    .bedrock-section {
+        padding: var(--space-4);
+    }
+    
+    .bedrock-section h3 {
+        font-size: var(--text-xl);
+    }
+    
+    .bedrock-section h4 {
+        font-size: var(--text-lg);
     }
     
     .testimonials-slider {
@@ -1726,8 +1746,28 @@ font-size: var(--text-lg);
         font-size: var(--text-base);
     }
     
-    .features-grid {
-        grid-template-columns: 1fr;
+    .bedrock-content {
+        padding: 0 var(--space-3);
+    }
+    
+    .bedrock-section {
+        padding: var(--space-3);
+    }
+    
+    .bedrock-section h3 {
+        font-size: var(--text-lg);
+    }
+    
+    .bedrock-section h4 {
+        font-size: var(--text-base);
+    }
+    
+    .bedrock-section p {
+        font-size: var(--text-sm);
+    }
+    
+    .bedrock-section li {
+        font-size: var(--text-sm);
     }
     
     .process-steps {
