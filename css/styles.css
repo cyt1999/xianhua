@@ -1163,69 +1163,6 @@ font-size: var(--text-lg);
 
 
 /* ========================
-   学习流程
-   ======================== */
-.process {
-    padding: var(--space-24) 0;
-    background: var(--color-white);
-}
-
-.process-steps {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-}
-
-.process-step {
-    flex: 1;
-    min-width: 200px;
-    max-width: 280px;
-    text-align: center;
-    position: relative;
-}
-
-.step-number {
-    font-size: var(--text-4xl);
-    font-weight: 700;
-    color: var(--color-accent);
-    font-family: var(--font-serif);
-    margin-bottom: var(--space-4);
-    opacity: 0.3;
-    transition: opacity var(--transition-base);
-}
-
-.process-step:hover .step-number {
-    opacity: 1;
-}
-
-.step-content {
-    padding: 0 var(--space-4);
-}
-
-.step-title {
-    font-size: var(--text-xl);
-    color: var(--color-gray-900);
-    margin-bottom: var(--space-3);
-}
-
-.step-description {
-    font-size: var(--text-sm);
-    color: var(--color-gray-500);
-    line-height: 1.7;
-    margin: 0;
-}
-
-.process-connector {
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--color-accent), transparent);
-    margin-top: 40px;
-    flex-shrink: 0;
-}
-
-/* ========================
    联系我们
    ======================== */
 .contact {
@@ -1768,17 +1705,6 @@ font-size: var(--text-lg);
     
     .bedrock-section li {
         font-size: var(--text-sm);
-    }
-    
-    .process-steps {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .process-connector {
-        width: 2px;
-        height: 40px;
-        margin: 0;
     }
     
     .footer-grid {
