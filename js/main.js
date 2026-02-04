@@ -18,6 +18,7 @@
         initSmoothScroll();
         initBackToTop();
         initMobileMenu();
+        initFAQ();
     });
 
     // ========================
@@ -438,6 +439,47 @@
                 navToggle.classList.remove('active');
                 document.body.style.overflow = '';
             }
+        });
+    }
+
+    // ========================
+    // Q&A问答模块
+    // ========================
+    function initFAQ() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        if (faqItems.length === 0) return;
+
+        faqItems.forEach(function(item) {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            if (!question || !answer) return;
+
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+
+                // 关闭所有其他展开的项
+                faqItems.forEach(function(otherItem) {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        if (otherAnswer) {
+                            otherAnswer.style.maxHeight = '0';
+                        }
+                    }
+                });
+
+                // 切换当前项的状态
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = '0';
+                } else {
+                    item.classList.add('active');
+                    // 设置max-height为scrollHeight以实现平滑动画
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
         });
     }
 
