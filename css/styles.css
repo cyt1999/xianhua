@@ -277,10 +277,6 @@ p {
     margin-bottom: var(--space-4);
 }
 
-.section-header .btn {
-    margin-top: var(--space-4);
-}
-
 /* ========================
    导航栏
    ======================== */
@@ -479,7 +475,7 @@ p {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     color: var(--color-white);
     margin-bottom: var(--space-6);
@@ -860,17 +856,14 @@ font-size: var(--text-lg);
 
 .courses-cta {
     text-align: center;
-    padding: var(--space-10);
-    background: linear-gradient(135deg, var(--color-primary) 0%, #132347 100%);
+    padding: var(--space-8);
+    background: var(--color-gray-50);
     border-radius: var(--radius-xl);
-    border: 1px solid rgba(201, 162, 39, 0.2);
 }
 
 .courses-cta p {
-    margin-bottom: var(--space-6);
-    font-size: var(--text-lg);
-    color: var(--color-white);
-    font-weight: 500;
+    margin-bottom: var(--space-4);
+    color: var(--color-gray-600);
 }
 
 /* ========================
@@ -1134,6 +1127,39 @@ font-size: var(--text-lg);
     display: flex;
     gap: var(--space-6);
     width: max-content;
+}
+
+/* 第一行：向左滚动 */
+.row-1 .testimonials-track {
+    animation: scrollLeft 40s linear infinite;
+}
+
+/* 第二行：向右滚动 */
+.row-2 .testimonials-track {
+    animation: scrollRight 40s linear infinite;
+}
+
+/* 第三行：向左滚动 */
+.row-3 .testimonials-track {
+    animation: scrollLeft 40s linear infinite;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - var(--space-3)));
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(calc(-50% - var(--space-3)));
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* 水平卡片样式 */
@@ -1521,12 +1547,10 @@ font-size: var(--text-lg);
 
 .footer-bottom {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding-top: var(--space-8);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    gap: var(--space-4);
 }
 
 .copyright {
