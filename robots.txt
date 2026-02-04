@@ -1,4 +1,4 @@
-# robots.txt for 显化交易学院
+# robots.txt for 显化资本
 # 显化 - 专业交易员孵化与交易教育培训
 
 User-agent: *
