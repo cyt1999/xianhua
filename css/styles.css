@@ -322,7 +322,6 @@ p {
 .logo-subtitle {
     font-size: var(--text-2xl);
     color: var(--color-accent);
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
@@ -476,7 +475,7 @@ p {
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.3rem, 5.3vw, 3.5rem);
     font-weight: 700;
     color: var(--color-white);
     margin-bottom: var(--space-6);
@@ -549,9 +548,11 @@ p {
     flex-direction: column;
     align-items: center;
     gap: var(--space-2);
-    color: var(--color-gray-500);
+    color: var(--color-white);
     font-size: var(--text-xs);
+    font-weight: 600;
     animation: bounce 2s infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes bounce {
@@ -562,11 +563,12 @@ p {
 .scroll-indicator {
     width: 24px;
     height: 40px;
-    border: 2px solid var(--color-gray-600);
+    border: 2px solid var(--color-white);
     border-radius: 12px;
     display: flex;
     justify-content: center;
     padding-top: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .scroll-wheel {
@@ -931,7 +933,7 @@ font-size: var(--text-lg);
 }
 
 /* ========================
-   学员心声 - 交错滚动效果
+   队员心声 - 交错滚动效果
    ======================== */
 .testimonials {
     padding: var(--space-24) 0;
