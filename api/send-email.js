@@ -16,9 +16,10 @@ export default async function handler(req, res) {
     }
 
     // 发送邮件
+    // 注意：在Resend验证域名之前，发送到注册邮箱进行测试
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'xianhua_Trading@outlook.com',
+      to: 'xianhua_trading@outlook.com',
       subject: '新的联系表单提交 - 显化资本',
       html: `
         <h1>新的联系表单提交</h1>
