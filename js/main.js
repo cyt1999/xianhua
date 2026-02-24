@@ -258,13 +258,41 @@
             submitBtn.textContent = '提交中...';
             submitBtn.disabled = true;
 
-            // 模拟表单提交
-            setTimeout(function() {
+            // 调用Vercel Serverless Function发送邮件
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                wechat: formData.get('wechat'),
+                interest: formData.get('interest'),
+                message: formData.get('message')
+            };
+
+            fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('服务器响应失败');
+                }
+                return response.json();
+            })
+            .then(result => {
                 showFormSuccess(form);
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 form.reset();
-            }, 1500);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showFormError(form, '提交失败，请稍后重试');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
 
         // 输入框焦点效果
@@ -344,6 +372,18 @@
 
         setTimeout(function() {
             successMessage.remove();
+        }, 5000);
+    }
+
+    function showFormError(form, message) {
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'form-error';
+        errorMessage.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px; margin-right: 8px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> ' + message;
+        errorMessage.style.cssText = 'display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(239, 68, 68, 0.1); border: 1px solid var(--color-error); border-radius: 0.5rem; color: var(--color-error); margin-bottom: 1rem;';
+        form.prepend(errorMessage);
+
+        setTimeout(function() {
+            errorMessage.remove();
         }, 5000);
     }
 

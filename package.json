@@ -1,0 +1,8 @@
+{
+  "name": "xianhua-capital",
+  "version": "1.0.0",
+  "description": "显化资本官网",
+  "dependencies": {
+    "resend": "^3.2.0"
+  }
+}
