@@ -4,13 +4,6 @@
     {
       "src": "api/**/*.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "."
-      }
     }
   ],
   "routes": [
@@ -19,11 +12,7 @@
       "dest": "/api/$1"
     },
     {
-      "src": "/(css|js|images|public)/(.*)",
-      "dest": "/$1/$2"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|json|webp))",
       "dest": "/$1"
     },
     {
